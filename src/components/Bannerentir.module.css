@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Inter:wght@800&family=Poppins:wght@400;500;600&family=Single+Day&display=swap");
+.top {
+    position: relative;
+    top: 80px;
+    left: 130px;
+    font-family: "Single Day", cursive;
+    font-weight: 400;
+    color: #72db73;
+    font-size: 71px;
+    letter-spacing: 0;
+    line-height: 99.2px;
+    white-space: nowrap;
+    font-size: 50px;
+}
+
+.bottom {
+    position: relative;
+    width: 554px;
+    top: 82px;
+    left: 123px;
+    font-family: "Roboto-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 68px;
+    letter-spacing: 0;
+    line-height: 95px;
+}

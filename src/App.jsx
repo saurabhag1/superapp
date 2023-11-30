@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Registerpage from "./pages/registerpage";
 import genre from "./pages/genre";
 import Sample from "./pages/sample";
+import Entir from "./pages/entir";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/register" element={<Registerpage />} />
         <Route path="/genre" element={<genre />} />
         <Route path="/sample" element={<Sample />} />
+        <Route path="/entir" element={<Entir />} />
       </Routes>
     </>
   );
