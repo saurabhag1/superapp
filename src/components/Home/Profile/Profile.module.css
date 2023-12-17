@@ -1,0 +1,10 @@
+.profile {
+    height: 300px;
+    width: 6vw;
+    position: relative;
+    top: -50px;
+    background-image: url("../../../assets/images/profile.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}

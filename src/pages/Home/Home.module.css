@@ -1,0 +1,30 @@
+.container {
+    padding: 1% 3% 3% 3%;
+    display: flex;
+}
+
+.news {
+    position: absolute;
+    right: 5%;
+}
+
+.containerFlex {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.timesPosition {
+    position: relative;
+    left: 3%;
+}
+
+.browse {
+    border-radius: 34.777px;
+    background: #148a08;
+    width: 11vw;
+    height: 6vh;
+    position: absolute;
+    right: 5%;
+    color: white;
+    font-size: large;
+}

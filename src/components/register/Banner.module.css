@@ -1,0 +1,16 @@
+.text {
+    height: 105vh;
+    width: 50vw;
+}
+
+.bottom {
+    position: relative;
+    color: aquamarine;
+    top: -250px;
+    left: 50px;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 55px;
+    letter-spacing: 0.7px;
+}

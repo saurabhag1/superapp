@@ -1,0 +1,84 @@
+.dateTime {
+    border-radius: 2.08925rem 2.08925rem 0rem 0rem;
+    background: #ff4ade;
+    width: 90%;
+    height: 9%;
+    color: #fff;
+    font-family: Roboto;
+    font-size: 2vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 141.688%;
+    /* 4.87581rem */
+    letter-spacing: 0.06881rem;
+    padding-left: 10%;
+}
+
+.weather {
+    border-bottom-left-radius: 2.08925rem;
+    border-bottom-right-radius: 2.08925rem;
+    background: #101744;
+    display: flex;
+    height: 17vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.dividerLine {
+    height: 21px;
+    color: #ffffff;
+    -webkit-transform: scaleY(3.5);
+    transform: scaleY(3.5);
+    position: relative;
+    top: 5.5vh;
+}
+
+.weatherText1 {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 1.5vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 139.688%;
+    /* 1.55975rem */
+}
+
+.celcius {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 2.77888rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 139.688%;
+    /* 3.88169rem */
+    position: relative;
+    top: 1vh;
+}
+
+.pressure {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 0.87388rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115.688%;
+    /* 1.22069rem */
+}
+
+.pressureText {
+    position: relative;
+    bottom: 1.5vh;
+}
+
+.windHumidity {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 0.87388rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120.688%;
+    /* 1.22069rem */
+}

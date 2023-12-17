@@ -1,112 +1,17 @@
-// import React, { useState } from "react";
-// import Bannerentir from "../components/Bannerentir.jsx";
-// import "../APP.css";
-// import { Helmet } from "react-helmet";
-// import Movie from "../components/movie.jsx";
-// import { resturantlist } from "../constants/constant.js";
-
-// function entir() {
-//   return (
-//     <>
-//       <div className="container-entir">
-//         <Helmet>
-//           <style>
-//             {"body { background-color: black; overflow-x: hidden;  }"}
-//           </style>
-//         </Helmet>
-//         <Bannerentir />
-//         <div className="movie-countainer">
-//           ss
-//           <div class="item item1">
-//             <Movie
-//               name={resturantlist[0].name}
-//               images={resturantlist[0].images}
-//               color="#FF5209"
-//               onMovieSelect={handleMovieSelect}
-//             />
-//           </div>
-//           <div class="item item2">
-//             <Movie
-//               name={resturantlist[1].name}
-//               images={resturantlist[1].images}
-//               color="#D7A4FF"
-//             />
-//           </div>
-//           <div class="item item3">
-//             <Movie
-//               name={resturantlist[2].name}
-//               images={resturantlist[2].images}
-//               color="#11B800"
-//             />
-//           </div>
-//           <div class="item item4">
-//             <Movie
-//               name={resturantlist[3].name}
-//               images={resturantlist[3].images}
-//               color="#84C2FF"
-//             />
-//           </div>
-//           <div class="item item5">
-//             <Movie
-//               name={resturantlist[4].name}
-//               images={resturantlist[4].images}
-//               color="#902500"
-//             />
-//           </div>
-//           <div class="item item6">
-//             <Movie
-//               name={resturantlist[5].name}
-//               images={resturantlist[5].images}
-//               color="#7358FF"
-//             />
-//           </div>
-//           <div class="item item7">
-//             <Movie
-//               name={resturantlist[6].name}
-//               images={resturantlist[6].images}
-//               color="#FF4ADE"
-//             />
-//           </div>
-//           <div class="item item8">
-//             <Movie
-//               name={resturantlist[7].name}
-//               images={resturantlist[7].images}
-//               color="#E61E32"
-//             />
-//           </div>
-//           <div class="item item9">
-//             <Movie
-//               name={resturantlist[8].name}
-//               images={resturantlist[8].images}
-//               color="#6CD061  "
-//             />
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
-// export default entir;
 import React, { useState, useEffect } from "react";
-import Bannerentir from "../components/Bannerentir.jsx";
+import Bannerentir from "../components/category/Bannerentir.jsx";
 import "../APP.css";
 import { Helmet } from "react-helmet";
-import Movie from "../components/movie.jsx";
+import Movie from "../components/category/movie.jsx";
 import { resturantlist } from "../constants/constant.js";
+import errorimg from "../assets/images/error-icon.png";
+import { useNavigate } from "react-router-dom";
 
 const Entir = () => {
-  // const [selectedMovies, setSelectedMovies] = useState([]);
-
-  // const handleMovieSelect = (movieName) => {
-  //   setSelectedMovies((prevSelectedMovies) => {
-  //     if (prevSelectedMovies.includes(movieName)) {
-  //       return prevSelectedMovies.filter((name) => name !== movieName);
-  //     } else {
-  //       return [...prevSelectedMovies, movieName];
-  //     }
-  //   });
-  // };
   const [selectedMovies, setSelectedMovies] = useState([]);
+  const [myborder, setmyborder] = useState([]);
+  const [error, seterror] = useState(false);
+  const navigate = useNavigate();
 
   const handleMovieSelect = (movie) => {
     const updatedSelectedMovies = [...selectedMovies];
@@ -131,9 +36,12 @@ const Entir = () => {
   const handleNextPageClick = () => {
     if (selectedMovies.length >= 3) {
       // Proceed to the next page logic here
-      console.log("Proceed to the next page");
+      seterror(false);
+      localStorage.setItem("selectedMovies", JSON.stringify(selectedMovies));
+      navigate("/home");
     } else {
-      alert("Please select at least 3 movies.");
+      seterror(true);
+      console.log("Proceed 3 to the next page");
     }
   };
 
@@ -142,32 +50,21 @@ const Entir = () => {
       <div className="container-entir">
         <Helmet>
           <style>
-            {"body { background-color: black; overflow-x: hidden; }"}
+            {
+              "body { background-color: black; overflow-y: hidden; overflow-x: hidden; }"
+            }
           </style>
         </Helmet>
         <Bannerentir />
-        {/* <div className="movie-container">
-          {resturantlist.map((movie, index) => (
-            <div key={index} className="item">
-              <Movie
-                name={movie.name}
-                images={movie.images}
-                color={movie.color}
-                onMovieSelect={handleMovieSelect}
-              />
-            </div>
-          ))}
-        </div> */}
+
         <div className="countainer">
           <div class="item item1">
             <Movie
               name={resturantlist[0].name}
               images={resturantlist[0].images}
               color="#FF5209"
-              isSelectedInSmallBox={selectedMovies.some(
-                (selectedMovie) => selectedMovie.name === movie.name
-              )}
               onMovieSelect={handleMovieSelect}
+              border={myborder}
             />
           </div>
           <div class="item item2">
@@ -175,43 +72,35 @@ const Entir = () => {
               name={resturantlist[1].name}
               images={resturantlist[1].images}
               color="#D7A4FF"
-              isSelectedInSmallBox={selectedMovies.some(
-                (selectedMovie) => selectedMovie.name === movie.name
-              )}
               onMovieSelect={handleMovieSelect}
+              border={myborder}
             />
           </div>
           <div class="item item3">
             <Movie
               name={resturantlist[2].name}
               images={resturantlist[2].images}
-              color="#FF5209"
-              isSelectedInSmallBox={selectedMovies.some(
-                (selectedMovie) => selectedMovie.name === movie.name
-              )}
+              color="rgb(20 135 8)"
               onMovieSelect={handleMovieSelect}
+              border={myborder}
             />
           </div>
           <div class="item item4">
             <Movie
               name={resturantlist[3].name}
               images={resturantlist[3].images}
-              color="#FF5209"
-              isSelectedInSmallBox={selectedMovies.some(
-                (selectedMovie) => selectedMovie.name === movie.name
-              )}
+              color="rgb(132, 194, 255)"
               onMovieSelect={handleMovieSelect}
+              border={myborder}
             />
           </div>
           <div class="item item5">
             <Movie
               name={resturantlist[4].name}
               images={resturantlist[4].images}
-              color="#FF5209"
-              isSelectedInSmallBox={selectedMovies.some(
-                (selectedMovie) => selectedMovie.name === movie.name
-              )}
+              color="rgb(144, 37, 0)"
               onMovieSelect={handleMovieSelect}
+              border={myborder}
             />
           </div>
           <div class="item item6">
@@ -219,43 +108,35 @@ const Entir = () => {
               name={resturantlist[5].name}
               images={resturantlist[5].images}
               color="#FF5209"
-              isSelectedInSmallBox={selectedMovies.some(
-                (selectedMovie) => selectedMovie.name === movie.name
-              )}
               onMovieSelect={handleMovieSelect}
+              border={myborder}
             />
           </div>
           <div class="item item7">
             <Movie
               name={resturantlist[6].name}
               images={resturantlist[6].images}
-              color="#FF5209"
-              isSelectedInSmallBox={selectedMovies.some(
-                (selectedMovie) => selectedMovie.name === movie.name
-              )}
+              color="rgb(115, 88, 255)"
               onMovieSelect={handleMovieSelect}
+              border={myborder}
             />
           </div>
           <div class="item item8">
             <Movie
               name={resturantlist[7].name}
               images={resturantlist[7].images}
-              color="#FF5209"
-              isSelectedInSmallBox={selectedMovies.some(
-                (selectedMovie) => selectedMovie.name === movie.name
-              )}
+              color="rgb(255, 74, 222)"
               onMovieSelect={handleMovieSelect}
+              border={myborder}
             />
           </div>
           <div class="item item9">
             <Movie
               name={resturantlist[8].name}
               images={resturantlist[8].images}
-              color="#FF5209"
-              isSelectedInSmallBox={selectedMovies.some(
-                (selectedMovie) => selectedMovie.name === movie.name
-              )}
+              color="rgb(230, 30, 50)"
               onMovieSelect={handleMovieSelect}
+              border={myborder}
             />
           </div>
         </div>
@@ -269,8 +150,18 @@ const Entir = () => {
             </div>
           ))}
         </div>
-        <button onClick={handleNextPageClick}>Next Page</button>
+        <button className="nextbtn" onClick={handleNextPageClick}>
+          Next Page
+        </button>
       </div>
+      {selectedMovies.length <= 2 && error ? (
+        <div className="errorContainer">
+          <img src={errorimg} className="errorimg"></img>
+          Minium 3 Catagory Required!{" "}
+        </div>
+      ) : (
+        ""
+      )}
     </>
   );
 };

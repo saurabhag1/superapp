@@ -1,5 +1,5 @@
-import Banner from "../components/Banner";
-import SignUp from "../components/SingUp";
+import Banner from "../components/register/Banner";
+import SignUp from "../components/register/SingUp";
 import { Helmet } from "react-helmet";
 import "../APP.css";
 import React from "react";
@@ -8,7 +8,7 @@ const registerpage = () => {
   return (
     <>
       {" "}
-      <div style={{ display: "flex" }}>
+      <div className="register" style={{ display: "flex" }}>
         <Helmet>
           <style>
             {"body { background-color: black; overflow-x: hidden;  }"}
