@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Bannerentir from "../components/category/Bannerentir.jsx";
-import "../pages/APP.css";
+import "../pages/entir.css";
 import { Helmet } from "react-helmet";
 import Movie from "../components/category/movie.jsx";
 import { resturantlist } from "../constants/constant.js";
