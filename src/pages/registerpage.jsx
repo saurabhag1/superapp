@@ -1,7 +1,6 @@
 import Banner from "../components/register/Banner";
 import SignUp from "../components/register/SingUp";
 import { Helmet } from "react-helmet";
-import "../APP.css";
 import React from "react";
 
 const registerpage = () => {
