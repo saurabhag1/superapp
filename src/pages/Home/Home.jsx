@@ -1,9 +1,9 @@
 import StyleHome from "./Home.module.css";
 import UserPannel from "../../components/Home/UserPannel/UserPannel";
-import News from "../../Components/Home/News/News";
-import Notes from "../../Components/Home/Notes/Notes";
-import Weather from "../../Components/Home/Weather/Weather";
-import Timer from "../../Components/Home/Timer/Timer";
+import News from "../../components/Home/News/News";
+import Notes from "../../components/Home/Notes/Notes";
+import Weather from "../../components/Home/Weather/Weather";
+import Timer from "../../components/Home/Timer/Timer";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
